@@ -26,7 +26,21 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration>
     public static void main(String... args) throws Exception
     {
         LOGGER.info("Running Hello World Application.");
-        LOGGER.debug("Application running with arguments = {}", args);
+
+        if (args.length == 0)
+        {
+            LOGGER.debug("No arguments provided.");
+        }
+        else
+        {
+            LOGGER.debug("Application running with arguments:");
+        }
+
+        for (int index = 0 ; index < args.length ; index++)
+        {
+            LOGGER.debug("Argument {}: {}", index, args[index]);
+        }
+
         new HelloWorldApplication().run(args);
     }
 
