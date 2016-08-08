@@ -1,8 +1,8 @@
 package com.playpen.dropwzard.resources;
 
 import com.codahale.metrics.annotation.Timed;
-import com.playpen.dropwzard.HelloWorldApplication;
 import com.playpen.dropwzard.api.Saying;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -56,5 +56,11 @@ public class HelloWorldResource
 
         LOGGER.debug("Returning saying: {}", saying);
         return saying;
+    }
+
+    @Override
+    public String toString()
+    {
+        return ToStringBuilder.reflectionToString(this);
     }
 }
