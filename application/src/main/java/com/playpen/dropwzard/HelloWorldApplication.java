@@ -1,6 +1,7 @@
 package com.playpen.dropwzard;
 
 import com.playpen.dropwzard.configuration.HelloWorldConfiguration;
+import com.playpen.dropwzard.health.TemplateHealthCheck;
 import com.playpen.dropwzard.resource.HelloWorldResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
@@ -79,6 +80,11 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration>
                 configuration.getTemplate(),
                 configuration.getDefaultName()
         );
+        environment.jersey().register(resource);
+
+        // Register the health check for the template.
+        TemplateHealthCheck healthCheck = new TemplateHealthCheck(configuration.getTemplate());
+        environment.healthChecks().register("template", healthCheck);
         environment.jersey().register(resource);
     }
 }
