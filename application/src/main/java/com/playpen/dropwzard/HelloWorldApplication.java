@@ -16,8 +16,6 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration>
 {
     private static final Logger LOGGER = LoggerFactory.getLogger(HelloWorldApplication.class);
 
-    private static final String PROJECT_NAME = "hello-world";
-
     /**
      * Entry point for this DropWizard application.
      * @param args Arguments to pass into the application. For instance the configuration file to start with.
@@ -51,13 +49,15 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration>
     @Override
     public String getName()
     {
-        LOGGER.debug("Returning project name: {}", PROJECT_NAME);
-        return PROJECT_NAME;
+        String projectName = super.getName();
+        LOGGER.debug("Returning project name: {}", projectName);
+        return projectName;
     }
 
     @Override
     public void initialize(Bootstrap<HelloWorldConfiguration> bootstrap)
     {
+        super.initialize(bootstrap);
         LOGGER.debug("Initializing application with bootstrap = {}", bootstrap);
     }
 
