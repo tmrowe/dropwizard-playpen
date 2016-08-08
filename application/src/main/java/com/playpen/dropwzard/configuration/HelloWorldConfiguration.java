@@ -34,7 +34,7 @@ public class HelloWorldConfiguration extends Configuration
 
     @Valid
     @NotNull
-    private PhraseFactory phrase = new PhraseFactory();
+    private final PhraseFactory phrase = new PhraseFactory();
 
     // Simple getters and setters.
 
