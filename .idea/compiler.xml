@@ -22,11 +22,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="dropwizard-playpen" />
+        <module name="application" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="dropwizard-playpen" target="1.8" />
+      <module name="application" target="1.5" />
+      <module name="dropwizard-playpen" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
