@@ -78,7 +78,8 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration>
         // Register the HelloWorldResource with DropWizard.
         HelloWorldResource resource = new HelloWorldResource(
                 configuration.getTemplate(),
-                configuration.getDefaultName()
+                configuration.getDefaultName(),
+                configuration.getPhrase().getContent()
         );
         environment.jersey().register(resource);
 

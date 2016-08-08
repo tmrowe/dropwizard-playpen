@@ -2,6 +2,9 @@
 template: Hello Developer, %s!
 defaultName: ${DW_DEFAULT_NAME:-Unknown Developer}
 
+phrase:
+  content: I am a developer.
+
 # Logging settings.
 logging:
 

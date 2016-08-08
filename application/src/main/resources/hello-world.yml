@@ -2,6 +2,9 @@
 template: Hello User, %s!
 defaultName: ${DW_DEFAULT_NAME:-Stranger}
 
+phrase:
+  content: I am a normal user.
+
 # Logging settings.
 logging:
 

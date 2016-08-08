@@ -5,6 +5,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
 /**
  * Primary configuration class for the project.
  *
@@ -28,6 +31,10 @@ public class HelloWorldConfiguration extends Configuration
     // Default value displayed for the users name if no name is given.
     @NotEmpty
     private String defaultName = "Stranger";
+
+    @Valid
+    @NotNull
+    private PhraseFactory phrase = new PhraseFactory();
 
     // Simple getters and setters.
 
@@ -53,6 +60,18 @@ public class HelloWorldConfiguration extends Configuration
     public void setDefaultName(String name)
     {
         this.defaultName = name;
+    }
+
+    @JsonProperty
+    public PhraseFactory getPhrase()
+    {
+        return phrase;
+    }
+
+    @JsonProperty
+    public void setPhrase(PhraseFactory phrase)
+    {
+        this.phrase = phrase;
     }
 
     @Override

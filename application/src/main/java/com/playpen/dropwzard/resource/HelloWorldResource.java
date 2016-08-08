@@ -26,6 +26,7 @@ public class HelloWorldResource
 
     private final String template;
     private final String defaultName;
+    private final String phrase;
     private final AtomicLong counter;
 
     /**
@@ -33,11 +34,12 @@ public class HelloWorldResource
      * @param template The template containing the message content used to build the {@link Saying} object.
      * @param defaultName THe default name to use if none is given.
      */
-    public HelloWorldResource(String template, String defaultName)
+    public HelloWorldResource(String template, String defaultName, String phrase)
     {
         LOGGER.debug("Created new HelloWorldResource with template: {}, and defaultName: {}", template, defaultName);
         this.template = template;
         this.defaultName = defaultName;
+        this.phrase = phrase;
         this.counter = new AtomicLong();
     }
 
@@ -52,7 +54,7 @@ public class HelloWorldResource
     {
         LOGGER.info("Say Hello called.");
         String value = String.format(template, name.orElse(defaultName));
-        Saying saying = new Saying(counter.incrementAndGet(), value);
+        Saying saying = new Saying(counter.incrementAndGet(), value, phrase);
 
         LOGGER.debug("Returning saying: {}", saying);
         return saying;

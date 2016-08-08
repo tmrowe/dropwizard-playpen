@@ -24,16 +24,19 @@ public class Saying
     @Length(max = 3)
     private String content;
 
+    private String phrase;
+
     public Saying()
     {
         LOGGER.debug("Saying object created with no arguments.");
     }
 
-    public Saying(long id, String content)
+    public Saying(long id, String content, String phrase)
     {
-        LOGGER.debug("Saying object created with id: {}, and content: {}", id, content);
+        LOGGER.debug("Saying object created with id: {}, content: {}, and phrase: {}", id, content, phrase);
         this.id = id;
         this.content = content;
+        this.phrase = phrase;
     }
 
     // Simple getters and setters.
@@ -48,6 +51,12 @@ public class Saying
     public String getContent()
     {
         return content;
+    }
+
+    @JsonProperty
+    public String getPhrase()
+    {
+        return phrase;
     }
 
     @Override
