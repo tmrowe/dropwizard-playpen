@@ -26,8 +26,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="application" target="1.5" />
-      <module name="dropwizard-playpen" target="1.5" />
+      <module name="application" target="1.8" />
+      <module name="dropwizard-playpen" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

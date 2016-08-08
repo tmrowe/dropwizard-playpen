@@ -17,12 +17,19 @@
 
     <properties>
 
+        <!-- Project Settings. -->
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
         <!-- REST API Framework. -->
         <dropwizard.version>1.0.0</dropwizard.version>
 
         <!-- Testing. -->
         <junit.version>4.12</junit.version>
         <mockito.version>1.10.19</mockito.version>
+
+        <!-- Maven -->
+        <maven.compiler.plugin.version>3.5.1</maven.compiler.plugin.version>
 
     </properties>
 
@@ -74,5 +81,23 @@
 
         </dependencies>
     </dependencyManagement>
+
+    <build>
+
+        <plugins>
+            <plugin>
+
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.plugin.version}</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+
+        </plugins>
+
+    </build>
 
 </project>
