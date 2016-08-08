@@ -1,0 +1,3 @@
+# Hello World Configuration for development/test.
+template: Hello Developer, %s!
+defaultName: ${DW_DEFAULT_NAME:-Unknown Developer}

@@ -1,3 +1,3 @@
-template: Hello, %s!
-
+# Hello World Configuration for production.
+template: Hello User, %s!
 defaultName: ${DW_DEFAULT_NAME:-Stranger}
