@@ -9,7 +9,8 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>DropWizard Playpen</name>
-    <description>A playpen project for learning the DropWizard framework.</description>
+    <description>A playpen project for learning the DropWizard framework. Starting point: http://www.dropwizard.io/1.0.0/docs/getting-started.html
+    </description>
 
     <modules>
         <module>application</module>
