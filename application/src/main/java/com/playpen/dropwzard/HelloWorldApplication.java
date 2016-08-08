@@ -1,6 +1,7 @@
 package com.playpen.dropwzard;
 
 import com.playpen.dropwzard.configuration.HelloWorldConfiguration;
+import com.playpen.dropwzard.resources.HelloWorldResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
@@ -18,7 +19,7 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration>
 
     /**
      * Entry point for this DropWizard application.
-     * @param args Arguments to pass into the application. For instance the configuration file to start with.
+     * @param args A list of command line arguments to run.
      * @throws Exception Thrown if any Exception was thrown by the underlying calls made by the application.
      */
     public static void main(String... args) throws Exception
@@ -61,11 +62,23 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration>
         LOGGER.debug("Initializing application with bootstrap = {}", bootstrap);
     }
 
+    /**
+     * When called registers the various elements of the application with DropWizard.
+     * @param configuration The configuration class this application is set to use.
+     * @param environment The environment to register application elements against.
+     */
     @Override
     public void run(HelloWorldConfiguration configuration,
                     Environment environment)
     {
         LOGGER.debug("Running application with configuration = {}", configuration);
         LOGGER.debug("Running application with environment = {}", environment);
+
+        // Register the HelloWorldResource with DropWizard.
+        HelloWorldResource resource = new HelloWorldResource(
+                configuration.getTemplate(),
+                configuration.getDefaultName()
+        );
+        environment.jersey().register(resource);
     }
 }
