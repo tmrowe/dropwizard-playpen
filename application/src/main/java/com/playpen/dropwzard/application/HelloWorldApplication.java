@@ -65,6 +65,11 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration>
 
     /**
      * When called registers the various elements of the application with DropWizard.
+     *
+     * Note:
+     * Complicated to construct classes should be extracted out of the run method and build in a factory class which
+     * can then be called here in the run method.
+     *
      * @param configuration The configuration class this application is set to use.
      * @param environment The environment to register application elements against.
      */
