@@ -1,3 +1,26 @@
 # Hello World Configuration for production.
 template: Hello User, %s!
 defaultName: ${DW_DEFAULT_NAME:-Stranger}
+
+# Logging settings.
+logging:
+
+  level: INFO
+
+  # Create appender to log everything to file only. Stored in target for easy cleanup.
+  appenders:
+    - type: file
+
+      # The file to which current statements will be logged.
+      currentLogFilename: ./target/logs/HelloWorld.log
+
+      # When the log file rotates, the archived log will be renamed to this and gzipped. The
+      # %d is replaced with the previous day (yyyy-MM-dd). Custom rolling windows can be created
+      # by passing a SimpleDateFormat-compatible format as an argument: "%d{yyyy-MM-dd-hh}".
+      archivedLogFilenamePattern: ./target/logs/HelloWorld-%d.log.gz
+
+      # The number of archived files to keep.
+      archivedFileCount: 5
+
+      # The timezone used to format dates.
+      timeZone: UTC

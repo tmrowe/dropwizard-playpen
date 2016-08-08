@@ -1,3 +1,31 @@
 # Hello World Configuration for development/test.
 template: Hello Developer, %s!
 defaultName: ${DW_DEFAULT_NAME:-Unknown Developer}
+
+# Logging settings.
+logging:
+
+  level: INFO
+
+  loggers:
+
+    "com.playpen.dropwizard": DEBUG
+
+  # Create appender to log everything to the console and file. Stored in target for easy cleanup.
+  appenders:
+    - type: console
+    - type: file
+
+      # The file to which current statements will be logged.
+      currentLogFilename: ./target/logs/HelloWorld.log
+
+      # When the log file rotates, the archived log will be renamed to this and gzipped. The
+      # %d is replaced with the previous day (yyyy-MM-dd). Custom rolling windows can be created
+      # by passing a SimpleDateFormat-compatible format as an argument: "%d{yyyy-MM-dd-hh}".
+      archivedLogFilenamePattern: ./target/logs/HelloWorld-%d.log.gz
+
+      # The number of archived files to keep.
+      archivedFileCount: 5
+
+      # The timezone used to format dates.
+      timeZone: UTC
