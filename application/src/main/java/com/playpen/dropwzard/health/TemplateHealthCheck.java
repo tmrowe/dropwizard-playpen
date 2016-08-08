@@ -22,7 +22,9 @@ public class TemplateHealthCheck extends HealthCheck
     }
 
     /**
-     * An example health check that ensures the template contains 'TEST'.
+     * An example health check that tests:
+     * - That the given template is well-formatted.
+     * - That the template contains the 'TEST' String.
      * @return A {@link Result} object, indicating whether this check passed or failed.
      */
     @Override
