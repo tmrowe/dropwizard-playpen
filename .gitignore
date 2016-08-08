@@ -20,4 +20,5 @@ hs_err_pid*
 /.idea/libraries/**
 */.idea/libraries/**
 */.idea/dictionaries/**
+/target/**
 */target/**
