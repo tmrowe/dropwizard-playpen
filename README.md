@@ -1,2 +1,2 @@
 # dropwizard-playpen
-Repository for playpen projects experimenting with the DropWizard framework.
+Playpen project for experimenting with the DropWizard framework.
