@@ -30,7 +30,7 @@ public class HelloWorldResource
 
     /**
      * Build a new instance of the this class with the given template and defaultName.
-     * @param template The template containing the message content.
+     * @param template The template containing the message content used to build the {@link Saying} object.
      * @param defaultName THe default name to use if none is given.
      */
     public HelloWorldResource(String template, String defaultName)
