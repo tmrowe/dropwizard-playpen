@@ -65,6 +65,7 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration>
     public void run(HelloWorldConfiguration configuration,
                     Environment environment)
     {
-        // nothing to do yet
+        LOGGER.debug("Running application with configuration = {}", configuration);
+        LOGGER.debug("Running application with environment = {}", environment);
     }
 }
