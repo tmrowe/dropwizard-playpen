@@ -5,6 +5,10 @@ defaultName: ${DW_DEFAULT_NAME:-Stranger}
 phrase:
   content: I am a normal user.
 
+# Configure server settings.
+server:
+  rootPath: /api/
+
 # Logging settings.
 logging:
 

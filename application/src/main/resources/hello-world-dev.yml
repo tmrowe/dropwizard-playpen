@@ -5,6 +5,10 @@ defaultName: ${DW_DEFAULT_NAME:-Unknown Developer}
 phrase:
   content: I am a developer.
 
+# Configure server settings.
+server:
+  rootPath: /api/
+
 # Logging settings.
 logging:
 
