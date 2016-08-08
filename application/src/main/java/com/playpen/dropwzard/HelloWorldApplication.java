@@ -58,7 +58,7 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration>
     @Override
     public void initialize(Bootstrap<HelloWorldConfiguration> bootstrap)
     {
-        // nothing to do yet
+        LOGGER.debug("Initializing application with bootstrap = {}", bootstrap);
     }
 
     @Override
