@@ -1,5 +1,6 @@
 package com.playpen.dropwzard.configuration;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
@@ -20,5 +21,11 @@ public class PhraseFactory
     public void setContent(String content)
     {
         this.content = content;
+    }
+
+    @Override
+    public String toString()
+    {
+        return ToStringBuilder.reflectionToString(this);
     }
 }
