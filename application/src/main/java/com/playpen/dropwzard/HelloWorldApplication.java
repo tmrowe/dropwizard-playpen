@@ -1,7 +1,7 @@
 package com.playpen.dropwzard;
 
 import com.playpen.dropwzard.configuration.HelloWorldConfiguration;
-import com.playpen.dropwzard.resources.HelloWorldResource;
+import com.playpen.dropwzard.resource.HelloWorldResource;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;

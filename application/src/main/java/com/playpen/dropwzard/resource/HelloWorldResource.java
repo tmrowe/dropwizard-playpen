@@ -1,4 +1,4 @@
-package com.playpen.dropwzard.resources;
+package com.playpen.dropwzard.resource;
 
 import com.codahale.metrics.annotation.Timed;
 import com.playpen.dropwzard.api.Saying;
