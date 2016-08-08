@@ -1,0 +1,6 @@
+# Configuration file for Travis CI.
+language: java
+
+# Build project with Java 8.
+jdk:
+  - oraclejdk8
