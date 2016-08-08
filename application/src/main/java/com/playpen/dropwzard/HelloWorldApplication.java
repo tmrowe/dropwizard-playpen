@@ -85,6 +85,5 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration>
         // Register the health check for the template.
         TemplateHealthCheck healthCheck = new TemplateHealthCheck(configuration.getTemplate());
         environment.healthChecks().register("template", healthCheck);
-        environment.jersey().register(resource);
     }
 }
