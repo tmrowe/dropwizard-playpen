@@ -1,4 +1,4 @@
-package com.playpen.dropwzard;
+package com.playpen.dropwzard.application;
 
 import com.playpen.dropwzard.configuration.HelloWorldConfiguration;
 import com.playpen.dropwzard.health.TemplateHealthCheck;
@@ -68,6 +68,7 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration>
      * @param configuration The configuration class this application is set to use.
      * @param environment The environment to register application elements against.
      */
+    @SuppressWarnings ("FeatureEnvy")
     @Override
     public void run(HelloWorldConfiguration configuration,
                     Environment environment)
@@ -79,7 +80,7 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration>
         HelloWorldResource resource = new HelloWorldResource(
                 configuration.getTemplate(),
                 configuration.getDefaultName(),
-                configuration.getPhrase().getContent()
+                configuration.getPhrase()
         );
         environment.jersey().register(resource);
 

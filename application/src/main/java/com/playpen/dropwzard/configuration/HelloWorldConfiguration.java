@@ -63,15 +63,9 @@ public class HelloWorldConfiguration extends Configuration
     }
 
     @JsonProperty
-    public PhraseFactory getPhrase()
+    public String getPhrase()
     {
-        return phrase;
-    }
-
-    @JsonProperty
-    public void setPhrase(PhraseFactory phrase)
-    {
-        this.phrase = phrase;
+        return phrase.getContent();
     }
 
     @Override
