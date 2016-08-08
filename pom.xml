@@ -33,6 +33,7 @@
         <!-- Maven -->
         <maven.compiler.plugin.version>3.5.1</maven.compiler.plugin.version>
         <maven.shade.plugin.version>2.4.3</maven.shade.plugin.version>
+        <maven.jar.plugin.version>3.0.2</maven.jar.plugin.version>
 
     </properties>
 
@@ -134,6 +135,20 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>
+
+            <!-- Use the Project version as the implementation version in the output jar. -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven.jar.plugin.version}</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                        </manifest>
+                    </archive>
+                </configuration>
             </plugin>
 
         </plugins>
