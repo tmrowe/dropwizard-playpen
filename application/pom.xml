@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>application</artifactId>
-
+    <name>Application</name>
+    <description>Core application for this project.</description>
 
 </project>
