@@ -7,7 +7,12 @@ phrase:
 
 # Configure server settings.
 server:
+
+  # Set Jersey's context path.
   rootPath: /api/
+
+  # Set Jetty's context path.
+  applicationContextPath: /
 
 # Logging settings.
 logging:

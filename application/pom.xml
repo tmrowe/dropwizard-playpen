@@ -13,4 +13,14 @@
     <name>Application</name>
     <description>Core application for this project.</description>
 
+    <dependencies>
+
+        <!-- REST API Framework. -->
+        <dependency>
+            <groupId>io.dropwizard</groupId>
+            <artifactId>dropwizard-assets</artifactId>
+        </dependency>
+
+    </dependencies>
+
 </project>

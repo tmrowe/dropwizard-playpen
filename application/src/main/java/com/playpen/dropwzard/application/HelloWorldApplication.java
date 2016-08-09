@@ -4,6 +4,7 @@ import com.playpen.dropwzard.configuration.HelloWorldConfiguration;
 import com.playpen.dropwzard.health.TemplateHealthCheck;
 import com.playpen.dropwzard.resource.HelloWorldResource;
 import io.dropwizard.Application;
+import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import org.slf4j.Logger;
@@ -68,6 +69,12 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration>
     {
         super.initialize(bootstrap);
         LOGGER.debug("Initializing application with bootstrap = {}", bootstrap);
+
+        // Register static web content.
+        bootstrap.addBundle(new AssetsBundle("/webapp", "/", "index.html"));
+        bootstrap.addBundle(new AssetsBundle("/webapp/assets/css/", "/css", null, "css"));
+        bootstrap.addBundle(new AssetsBundle("/webapp/assets/img/", "/img", null, "img"));
+        bootstrap.addBundle(new AssetsBundle("/webapp/assets/js/", "/js", null, "js"));
     }
 
     /**
