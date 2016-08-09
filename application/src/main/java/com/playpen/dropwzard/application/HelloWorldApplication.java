@@ -1,10 +1,12 @@
 package com.playpen.dropwzard.application;
 
+import com.playpen.dropwzard.cli.ExampleCommand;
 import com.playpen.dropwzard.configuration.HelloWorldConfiguration;
 import com.playpen.dropwzard.health.TemplateHealthCheck;
 import com.playpen.dropwzard.resource.HelloWorldResource;
 import io.dropwizard.Application;
 import io.dropwizard.assets.AssetsBundle;
+import io.dropwizard.cli.Command;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import org.slf4j.Logger;
@@ -62,7 +64,7 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration>
      *
      * Note:
      * We would register the paths to static assets (e.g. JavaScript, CSS, HTML etc.) here.
-     * @param bootstrap A {@link Bootstrap} object onto which bundles can be added.
+     * @param bootstrap An object onto which {@link Command}s or {@link AssetsBundle}s can be added.
      */
     @Override
     public void initialize(Bootstrap<HelloWorldConfiguration> bootstrap)
@@ -75,6 +77,9 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration>
         bootstrap.addBundle(new AssetsBundle("/webapp/assets/css/", "/css", null, "css"));
         bootstrap.addBundle(new AssetsBundle("/webapp/assets/img/", "/img", null, "img"));
         bootstrap.addBundle(new AssetsBundle("/webapp/assets/js/", "/js", null, "js"));
+
+        // Register custom Commands.
+        bootstrap.addCommand(new ExampleCommand());
     }
 
     /**
