@@ -56,6 +56,13 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration>
         return projectName;
     }
 
+    /**
+     * Called to bootstrap the application.
+     *
+     * Note:
+     * We would register the paths to static assets (e.g. JavaScript, CSS, HTML etc.) here.
+     * @param bootstrap A {@link Bootstrap} object onto which bundles can be added.
+     */
     @Override
     public void initialize(Bootstrap<HelloWorldConfiguration> bootstrap)
     {
@@ -67,8 +74,8 @@ public class HelloWorldApplication extends Application<HelloWorldConfiguration>
      * When called registers the various elements of the application with DropWizard.
      *
      * Note:
-     * Complicated to construct classes should be extracted out of the run method and build in a factory class which
-     * can then be called here in the run method.
+     * Any complicated to construct classes should be extracted out of the run method and build in a factory class
+     * which can then be called here in the run method.
      *
      * @param configuration The configuration class this application is set to use.
      * @param environment The environment to register application elements against.
